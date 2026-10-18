@@ -40,3 +40,11 @@ Gasmenge = Gesamtgewicht − Tara. Füllstand = Gasmenge ÷ Nennfüllmenge × 10
 - **Tests:** Vitest für Grenzfälle und Parser, React Testing Library für Bedienung, Fehlermeldungen und Speicherung. Keine exakten Laufzeitprognosen: Diese würden zusätzlich den tatsächlichen Gasverbrauch benötigen.
 
 Die Anwendung überträgt keine Eingaben. Die Messgenauigkeit hängt von Waage und Tara-Angabe ab. Bei einer Überfüllungsmeldung zunächst Eingaben und Flaschenkennzeichnung prüfen.
+
+## GitHub Pages
+
+Der Workflow `.github/workflows/pages.yml` prüft und baut die App bei jedem Push auf `main` und veröffentlicht `dist/` über GitHub Pages. Unter **Settings → Pages → Build and deployment → Source** muss **GitHub Actions** ausgewählt sein. Bei späterer Aktivierung den Workflow **Deploy to GitHub Pages** unter **Actions → Run workflow** erneut starten.
+
+Zieladresse: https://amiandi.github.io/codex-test/
+
+Vite verwendet dafür den Basispfad `/codex-test/`, damit JavaScript und CSS auch unter dem Repository-Unterpfad geladen werden. Bei einem anderen Repository-Namen oder Hosting unter einer eigenen Domain muss `base` in `vite.config.ts` angepasst werden. Für den lokalen Entwicklungsserver gilt dadurch ebenfalls der Pfad `/codex-test/`.
